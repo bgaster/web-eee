@@ -1,6 +1,6 @@
 /**
  * diii web app
- * Minimal serial REPL + script browser iii devices.
+ * Minimal serial REPL + script browser eee devices.
  */
 
 class iiiConnection {
@@ -242,7 +242,8 @@ class diiiApp {
         this.checkBrowserSupport();
         this.renderFileList();
 
-        this.outputLine('//// welcome. connect to an iii compatible grid or arc to begin.');
+        this.outputLine('//// based on diii from monome.org.');
+        this.outputLine('//// welcome. connect to an eee compatible device to begin.');
     }
 
     cacheElements() {
@@ -305,7 +306,7 @@ class diiiApp {
         });
 
         on(this.elements.scriptReferenceBtn, 'click', () => {
-            window.open('https://monome.org/docs/iii/code', '_blank');
+            window.open('https://cuberoo.uk/docs/eee/code', '_blank');
         });
 
         this.iiiDevice.onDataReceived = (data) => this.handleiiiOutput(data);
@@ -642,7 +643,7 @@ class diiiApp {
         }
 
         if (!this.iiiDevice.isConnected) {
-            this.outputLine('no iii device connected.');
+            this.outputLine('no eee device connected.');
             this.resetReplInput();
             return;
         }
@@ -680,7 +681,7 @@ class diiiApp {
 
         try {
             if (!auto) {
-                this.outputLine('Connecting to iii device...');
+                this.outputLine('Connecting to eee device...');
             }
 
             let reconnectPort = this.selectedPort;
